@@ -1,6 +1,6 @@
 <?php
 	require_once(get_stylesheet_directory().'/custom/woocommerce.php'); 
-	//require_once(get_stylesheet_directory().'/custom/ea_expand_image.php'); 
+	require_once(get_stylesheet_directory().'/custom/ea_expand_image.php'); 
 	function theme_enqueue_styles() {
 	    wp_enqueue_style( 'avada-parent-stylesheet', get_template_directory_uri() . '/style.css' );
 	    //wp_register_script('ea_expand_image', get_stylesheet_directory_uri().'/custom/ea_expand_image.js');

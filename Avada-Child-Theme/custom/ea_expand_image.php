@@ -32,7 +32,7 @@ function my_img_caption_shortcode( $empty, $attr, $content ){
 	//. '<a id="ea-expand" onclick="document.getElementById('."'".$saved_id."'".').animate({width:'."'".'100px'."'".'})">HERE!</a>'
 	// nope . '<a id="ea-expand" onclick="jQuery(this).parent().style.color = '."'".'red'."'".'"">HERE!</a>'
 	//. '<script> function eaExpand() { this.style.color = red; } </script>'
-	.'<script> function myFunction(elmnt,clr) { elmnt.style.color = clr; } </script> '
+
 	. '</div>';
 
 }
