@@ -1,0 +1,1 @@
+function eaExpandImage() { this.style.color = red; }
