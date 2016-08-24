@@ -36,3 +36,32 @@ function my_img_caption_shortcode( $empty, $attr, $content ){
 	. '</div>';
 
 }
+/* This will add a field in the attachment edit screen for applying a class to the img tag. */
+
+function IMGattachment_fields($form_fields, $post) {
+    $form_fields["imageClass"]["label"] = __("Image Class");
+    $form_fields["imageClass"]["value"] = get_post_meta($post->ID, "_imageClass", true);
+    return $form_fields;
+}
+
+add_filter("attachment_fields_to_edit", "IMGattachment_fields", null, 2);
+function my_image_attachment_fields_save($post, $attachment) {
+    if ( isset($attachment['imageClass']) )
+    update_post_meta($post['ID'], '_imageClass', $attachment['imageClass']);
+    return $post;
+}
+add_filter("attachment_fields_to_save", "my_image_attachment_fields_save", null, 2);
+
+
+/* this works, but not quite what we want.  
+function filter_image_send_to_editor($html, $id, $caption, $title, $align, $url, $size, $alt) {
+  $html = str_replace('<img ', '<img id="my-super-special-id" ', $html);
+
+  return $html;
+}
+add_filter('image_send_to_editor', 'filter_image_send_to_editor', 10, 8); */
+function add_image_class($class, $id, $align, $size){
+    $class .= ' ea-expandable';
+    return $class;
+}
+add_filter('get_image_tag_class','add_image_class');
