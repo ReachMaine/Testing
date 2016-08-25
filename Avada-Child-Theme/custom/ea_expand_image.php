@@ -1,6 +1,6 @@
 <?php /* ea_expand_image */
 /* purpose - to allow a light box type of image expansion with out the light box stuff */
-// add ea-expandable class to the caption.
+// add ea-contracted-image class to the caption.
 add_filter( 'img_caption_shortcode', 'my_img_caption_shortcode', 10, 3 );
 function my_img_caption_shortcode( $empty, $attr, $content ){
 	$attr = shortcode_atts( array(
@@ -24,38 +24,21 @@ function my_img_caption_shortcode( $empty, $attr, $content ){
 	. 'style="max-width: ' . ( 10 + (int) $attr['width'] ) . 'px;">'
 	. do_shortcode( $content )
 	. '<p class="wp-caption-text">' . $attr['caption'] . '</p>'
-	//.'<a id="ea-expand" onclick="eaExpandImage()">HERE!</a>'
-	// works. '<a id="ea-expand" onclick="this.innerHTML= Date()" >HERE!</a>'
-	// also works. '<a id="ea-expand" onclick="this.style.color= '."'".'red'."'".'"">HERE!</a>'
-	//works. '<a id="ea-expand" onclick="document.getElementById('."'".$saved_id."'".').style.color = '."'".'red'."'".'"">HERE!</a>'
-	//. '<a id="ea-expand" onclick="document.getElementById('."'".$saved_id."'".').animate({width:'."'".'100px'."'".'})">HERE!</a>'
-	// nope . '<a id="ea-expand" onclick="jQuery(this).parent().style.color = '."'".'red'."'".'"">HERE!</a>'
-	//. '<script> function eaExpand() { this.style.color = red; } </script>'
-
 	. '</div>';
 
 }
 
 //
-
-/* This will add a field in the attachment edit screen for applying a class to the img tag. */
-
-// add the checkbox to the 
-/* function IMGattachment_fieldsBack($form_fields, $post) {
-    $form_fields["imageClass"]["label"] = __("Image Expandable?");
-    $form_fields["imageClass"]["value"] = get_post_meta($post->ID, "_imageClass", true);
-    return $form_fields;
-} */
-// add the checkbox to the 
+// add the checkbox to the add media screen
 function IMGattachment_fields($form_fields, $post) {
-	$exp =  get_post_meta($post->ID, '_eaExpandable', true);
+	$exp =  get_post_meta($post->ID, '_eaNoExpand', true);
 	$checked = ($exp) ? 'checked' : '';
 	$form_fields['eaExpand'] = array(
-		'label' => 'Expandable ?',
+		'label' => 'Dont Expand',
 		'input' => 'html',
 		'html' => "<input type='checkbox' {$checked} name='attachments[{$post->ID}][eaExpand]' id='attachments[{$post->ID}][eaExpand]' />",
 		'value' => $exp,
-		'helps' => 'Allow this image to expand in content'
+		'helps' => 'Prevent this image from expanding in content.'
 		);
     return $form_fields;
 }
@@ -63,7 +46,7 @@ add_filter("attachment_fields_to_edit", "IMGattachment_fields", null, 2);
 
 function my_image_attachment_fields_save($post, $attachment) {
     //if ( isset($attachment['eaExpand']) )
-    update_post_meta($post['ID'], '_eaExpandable', $attachment['eaExpand']);
+    update_post_meta($post['ID'], '_eaNoExpand', $attachment['eaExpand']);
     return $post;
 }
 add_filter("attachment_fields_to_save", "my_image_attachment_fields_save", null, 2);
@@ -80,7 +63,7 @@ add_filter('image_send_to_editor', 'filter_image_send_to_editor', 10, 8); */
 
 /* add a class based on post_meta on image? */
 function add_image_class($class, $id, $align, $size){
-    if (get_post_meta($id, '_eaExpandable', true) == 'on') {
+    if (get_post_meta($id, '_eaNoExpand', true) != 'on') {
     	$class .= ' ea-expandable';
     } 
     return $class;
