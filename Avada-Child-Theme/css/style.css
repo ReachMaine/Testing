@@ -30,19 +30,3 @@ Text Domain:  Avada
   img.ea-expandable:hover {
     box-shadow: 0 0 10px #555;
     cursor: pointer; } }
-@media screen and (min-color-index: 0) and (-webkit-min-device-pixel-ratio: 0) {
-  .ea-expanded-image,
-  .ea-expanded-image img {
-    max-width: 100% !important;
-    width: 100% !important;
-    -webkit-transition-duration: 0s;
-    -moz-transition-duration: 0s;
-    -o-transition-duration: 0s;
-    transition-duration: 0s; }
-
-  img.ea-expandable,
-  .ea-contracted-image {
-    -webkit-transition-duration: 0s;
-    -moz-transition-duration: 0s;
-    -o-transition-duration: 0s;
-    transition-duration: 0s; } }
