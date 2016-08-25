@@ -1,8 +1,7 @@
 <?php /* ea_expand_image */
 /* purpose - to allow a light box type of image expansion with out the light box stuff */
-// not using this.
-//add_filter( 'img_caption_shortcode', 'my_img_caption_shortcode', 10, 3 );
-
+// add ea-expandable class to the caption.
+add_filter( 'img_caption_shortcode', 'my_img_caption_shortcode', 10, 3 );
 function my_img_caption_shortcode( $empty, $attr, $content ){
 	$attr = shortcode_atts( array(
 		'id'      => '',
@@ -21,11 +20,11 @@ function my_img_caption_shortcode( $empty, $attr, $content ){
 	}
 
 	return '<div ' . $attr['id']
-	. 'class="wp-caption ' . esc_attr( $attr['align'] ) . '" '
+	. 'class="wp-caption ea-contracted-image ' . esc_attr( $attr['align'] ) . '" '
 	. 'style="max-width: ' . ( 10 + (int) $attr['width'] ) . 'px;">'
 	. do_shortcode( $content )
 	. '<p class="wp-caption-text">' . $attr['caption'] . '</p>'
-	.'<a id="ea-expand" onclick="eaExpandImage()">HERE!</a>'
+	//.'<a id="ea-expand" onclick="eaExpandImage()">HERE!</a>'
 	// works. '<a id="ea-expand" onclick="this.innerHTML= Date()" >HERE!</a>'
 	// also works. '<a id="ea-expand" onclick="this.style.color= '."'".'red'."'".'"">HERE!</a>'
 	//works. '<a id="ea-expand" onclick="document.getElementById('."'".$saved_id."'".').style.color = '."'".'red'."'".'"">HERE!</a>'
@@ -36,6 +35,9 @@ function my_img_caption_shortcode( $empty, $attr, $content ){
 	. '</div>';
 
 }
+
+//
+
 /* This will add a field in the attachment edit screen for applying a class to the img tag. */
 
 // add the checkbox to the 
@@ -80,9 +82,7 @@ add_filter('image_send_to_editor', 'filter_image_send_to_editor', 10, 8); */
 function add_image_class($class, $id, $align, $size){
     if (get_post_meta($id, '_eaExpandable', true) == 'on') {
     	$class .= ' ea-expandable';
-    } else {
-    	$class .= ' nope-'.get_post_meta($id, '_eaExpandable', true) ;
-    }
+    } 
     return $class;
 }
 add_filter('get_image_tag_class','add_image_class', 10, 4);
