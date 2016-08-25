@@ -1,8 +1,7 @@
 jQuery(document).ready(function(){
 
-	function eaExpandImage() { this.style.color = red; };
-
-	jQuery("img").click(function(){
-	jQuery(this).parent().toggleClass('expanded-image');('expanded-image');
+	jQuery("img.ea-expandable").click(function(){
+	jQuery(this).parent().toggleClass('ea-contracted-image');
+	jQuery(this).parent().toggleClass('ea-expanded-image');
 	});
 });	
