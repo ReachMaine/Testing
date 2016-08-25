@@ -86,3 +86,6 @@ function add_image_class($class, $id, $align, $size){
     return $class;
 }
 add_filter('get_image_tag_class','add_image_class', 10, 4);
+
+
+// now default image ddl attributes.

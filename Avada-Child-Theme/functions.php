@@ -1,6 +1,13 @@
 <?php
 	require_once(get_stylesheet_directory().'/custom/woocommerce.php'); 
 	require_once(get_stylesheet_directory().'/custom/ea_expand_image.php'); 
+	// default the media attributes 
+	function ea_media_defaults () {
+		update_option('image_default_link_type', 'none' ); 
+		update_option('image_default_size', 'large' );
+	}
+	add_action('after_setup_theme', 'ea_media_defaults');
+
 	function theme_enqueue_styles() {
 	    wp_enqueue_style( 'avada-parent-stylesheet', get_template_directory_uri() . '/style.css' );
 	    //wp_register_script('ea_expand_image', get_stylesheet_directory_uri().'/custom/ea_expand_image.js');

@@ -1,0 +1,21 @@
+Notes on the ea_expand project 
+
+Files to the functioning of this add-on.
+-------------------
+ - php [ea_expand_image.php]
+ - js  [ea_expand_image.js]
+ - css [ea_expand_image.scss & .css]
+ - this text file.
+
+Parts of the functioning
+----------------------
+1. [php] add a check box (Expandable) in the media libary when you add a image into an article.
+2. [php] if the Expandable check box is checked, add a class (ea-expandable) to the image as it is inserted into an article
+3. [php] If a caption is used, add a class to the the caption that we can toggle on & off (ea-contracted-image).
+4.  [js] A js script checks for ea-expandable class of an image.  & toggles the classes of the parent from ea-contracted-image & ea-expanded-image. 
+5.  [css] css targets an image with the ea-expandable & the caption container of ea-expanded-image or ex-contracted-image.
+
+Caveats. (aka zig's worries)
+-------
+1.  adding the ea-contracted-image to the caption via the img_caption_shortcode filter (which isnt really a filter), but more of a override.  if something else wants hooks onto that filter, this may not work.
+
