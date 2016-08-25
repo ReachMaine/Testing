@@ -5,3 +5,19 @@ Template: Avada
 Version: 1.0.0
 Text Domain:  Avada
 */
+@media only screen and (min-width: 481px) {
+  .wp-caption.ea-expanded-image,
+  .ea-expanded-image img {
+    max-width: 100% !important;
+    width: 100% !important;
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s; }
+
+  img.ea-expandable,
+  .ea-contracted-image {
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s; }
+
+  img.ea-expandable:hover {
+    box-shadow: 0 0 10px #555;
+    cursor: pointer; } }
