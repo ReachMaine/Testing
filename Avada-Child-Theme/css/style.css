@@ -27,6 +27,15 @@ Text Domain:  Avada
     -o-transition-duration: 1s;
     transition-duration: 1s; }
 
+  .ea-expanded-image.ea-snap-image,
+  .ea-expanded-image.ea-snap-image img.ea-snap-image,
+  img.ea-expandable.ea-snap-image,
+  .ea-contracted-image.ea-snap-image {
+    -webkit-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s; }
+
   img.ea-expandable:hover {
     box-shadow: 0 0 10px #555;
     cursor: pointer; } }
