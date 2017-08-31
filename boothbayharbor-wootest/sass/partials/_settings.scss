@@ -1,0 +1,97 @@
+/*** settings ***/
+.center             { text-align: center; }
+.aligncenter        { margin: auto; text-align: center; margin-bottom: 22px; display: block !important;}
+.alignleft          { float: left; margin: 0px 30px 22px 0px;  }
+.alignright         { float: right; margin: 0px 0px 22px 30px; }
+
+.left               { float:left;  }
+.right              { float:right; }
+
+small               { font-size: 12px; line-height: 14px; }
+strong              { }
+b                   { font-weight: bold; }
+
+.normal             { font-weight: normal; }
+.hidden             { display: none; }
+.wp-caption         { }
+.wp-caption-text    { }
+.sticky             { }
+.gallery-caption    { }
+.bypostauthor       { }
+body {
+    font-size: 16px;
+}
+h1, .document-title h1 {
+    font-size: 3em;
+    font-weight: 500;
+}
+
+h2,.post-detail h2{
+    font-size: 2.6em;
+    text-transform: none;
+    border-bottom: 0px;
+}
+h3 {
+    font-size: 2.4em;
+}
+h4 {
+    font-size: 2em;
+}
+h5 {
+    font-size: 1.8em;
+}
+h6 {
+    font-size: 1.4em;
+}
+p {
+    font-size: 1em;
+}
+.page.page-template-page-fullwidth-no-title #primary .post-content,
+.page.page-template-page-no-title #primary .post-content {
+    margin-top: 0px;
+}
+
+.bbh-border-wide.panel-widget-style {
+    border-width: 3px!important;
+}
+
+.bbh-bkg-navy {
+    background-color: $bbh-navy;
+}
+.bbh-bkg-grey {
+    background-color: #425c65; //#5c676b;
+}
+.btn-primary, .button,
+input[type=submit],
+button,
+.fileinput-upload-button,
+.listing-create, .listing-detail-gallery-preview .owl-next,
+.listing-detail-gallery-preview .owl-prev,
+.listings-slider-item-info-more a,
+.coupon-detail-gallery-preview .owl-next,
+.coupon-detail-gallery-preview .owl-prev,
+.inventor-slider-item-info-button a,
+.btn-create-collection
+.button {
+    background-color: $bbh-turq;
+}
+
+.widget-pb,
+.widget .widget-pb {
+  padding-bottom: 30px;
+}
+.post-content {
+  .widget ul, ol {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    li {
+      border-bottom: 0px;
+      padding: 4px 0;
+    }
+  }
+  .widget ul {
+    list-style-type: disc;
+    padding-left: 40px;
+  }
+}
+/*** end settings ***/

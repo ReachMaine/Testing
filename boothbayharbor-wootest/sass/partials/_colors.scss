@@ -1,0 +1,26 @@
+/***  Colors ---------------------------------------------- */
+// Font Colors
+//$linkcolor: #a62425;
+//$titleFontColor: #a62425;
+
+// Background colors:
+$header-bkg: #044357;
+$highlight-red: #89263f;
+$top-full-bkg: #003E52; // navy
+$topbar-bkg: #E86C1F; // orange
+$footer-bkg: #003E52; // navy
+$bbh-navy: #003E52;
+$bbh-turq: #0084C7;
+$bbh-orange:  #E86C1F; //#E86C20
+$bbh-light-blue: #0084c7;
+$bbh-lighter-blue: #64bfec;
+$bbh-mint: #099384;
+//$bkgoundContent: #FFFFFF; //
+//$menuBarbkg: #D14719; //
+
+// removing mint
+
+.map-switch {
+  background-color: $bbh-light-blue;
+}
+/*** end colors ****/

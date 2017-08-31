@@ -1,0 +1,57 @@
+/***  Woocommerce styling  ---------------------------------------------- */
+// woocommerce buttons
+// alt buttons
+  .woocommerce #respond input#submit.alt,
+  .woocommerce #primary a.button.alt, // added #primary here for this them
+  .woocommerce-page #primary a.button.alt,
+  .woocommerce #primary button.button.alt,
+  .woocommerce-page #primary input.button.alt,
+  .woocommerce-page #primary input#place_order,
+  .woocommerce #primary input.button.alt { // defaults to purple
+    background-color: $bbh-turq;
+  }
+// more buttons (not alt)
+.woocommerce #respond input#submit,
+.woocommerce-page #primary a.button,
+.woocommerce #primary a.button,
+.woocommerce-page #primary button.button,
+.woocommerce #primary button.button,
+.woocommerce #primary input.button,
+.woocommerce-page #primary input.button,
+.woocommerce #primary .woocommerce-message .button  { // defaults to grey
+  background-color: $bbh-lighter-blue;
+}
+
+// woocommerce messages
+#primary {
+  .woocommerce-message {
+    border-top-color: $topbar-bkg;
+  }
+  .woocommerce-message::before {
+    color: $topbar-bkg;
+  }
+}
+
+// single product
+.product {
+  .woocommerce-product-gallery__image--placeholder img {
+    max-width: 200px;
+  }
+}
+@media (min-width: 769px) {
+    .woocommerce #primary div.product div.images,
+    .woocommerce div.product div.images,
+    .woocommerce-page #primary div.product div.images,
+    .woocommerce-page div.product div.images {
+      width: 25%;
+    }
+
+    .woocommerce #primary div.product div.summary,
+    .woocommerce div.product div.summary,
+    .woocommerce-page #primary div.product div.summary,
+    .woocommerce-page div.product div.summary {
+        width: 70%;
+    }
+}
+
+/*** end Woocommerce styling ****/

@@ -1,0 +1,68 @@
+// Styling for anything for the Event On calendar
+
+//HOMEPAGE
+
+.eo_card_box > div:nth-child(1) {
+  display: none; //hide photos on upcoming events on homepage
+}
+
+.eo_card_title_boxContainer {
+  margin-top: 35px; //Moving down calendar info boxes after removing images
+}
+
+p#slider_1_mebox_subtitle {
+  display: none; //hide the "meta box" that can hold extra information on the homepage upcoming events.
+}
+// slider
+.eoas_evo_pop_body { // since doesnt use images for calendar, hide the default empty image on the popup
+  .eoas_evcal_evdata_img {
+    height: 0px;
+    background-image: none;
+    display: none;
+  }
+}
+
+.eo_card_title {
+  background-color: #003e52;
+  div {
+    color: white !important;
+    background-color: inherit !important;
+    span {
+      max-height: 49px !important; //fills the "meta box" space from above with more of the event title
+      font-size: 12px !important;
+      line-height: 17px !important;
+    }
+  }
+}
+
+.eo_card_box {
+  .eo_card_main_date {
+    border-left-color: #E86C1F !important; //left border on date orange
+  }
+  i {
+    color: #E86C1F !important; //icons orange
+  }
+  .eo_card_sotitle {
+    text-transform: capitalize; //capitalize month in dates
+  }
+}
+
+// submitting event /action user
+.eventon_au_form_section {
+  input.fullwidth  {
+    margin-left: 0px; // counter act theme's .fullwidth settings
+    margin-right: 0px;
+  }
+}
+
+//Calendar view by month
+
+.ajde_evcal_calendar .calendar_header {
+  .evcal_arrows {
+    color: #4e4e4e !important;
+    border-color: #4e4e4e !important;
+    .fa {
+      color: #4e4e4e !important;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+/* styling for the list of members by custom shortcodes */
+/* members in category shortcode list
+* used on the weddings page */
+.bbh_member_in_cat_wrapper {
+  h4.bbh_member_in_cat_title {
+    margin-left: 8px;
+    margin-bottom: 5px;
+  }
+  ul.bbh_members_in_cat {
+    list-style-type: none;
+    padding-left: 10px;
+    background-color: white;
+    border: 1px solid #efefef;
+  }
+}
+
+/* styling for the list of categories in a type
+* used on the member directory page */
+.bbh_listcat_wrapper {
+  h4.bbh_listcat_title {
+    margin-left: 8px;
+    margin-bottom: 5px;
+  }
+  ul.bbh_listcats {
+    list-style-type: none;
+    padding-left: 10px;
+    background-color: white;
+    border: 1px solid #efefef;
+  }
+}

@@ -1,0 +1,20 @@
+/* listings admin styling */
+/* my listings */
+.listings-system {
+  .listing-system-row {
+    .listing-system-row-image {
+      a {
+        background-size: contain;
+      }
+
+      a:hover:after {
+        content: none; // hide the eyeglass
+      }
+    }
+  }
+}
+// editing a listing
+.cmb-row.cmb2-id-listing-brand-color {
+  display: none;  // dont display brand color
+}
+/* end listings admin styling */
